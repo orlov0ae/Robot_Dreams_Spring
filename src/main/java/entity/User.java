@@ -1,25 +1,50 @@
 package entity;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Data
+@Entity
 @Component
+@Table(name = "users", schema = "robot_dreams_advanced")
+@AllArgsConstructor
+@NoArgsConstructor(force = true)
+@Builder
+@Getter
+@Setter
 @Scope("session")
 public class User {
 
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String name;
 
-    private final String id;
-    private final String name;
-    private final Computer computer;
+    @JsonIgnore
+    private String password;
+    @ManyToMany
+    @JoinTable(name = "user_roles", schema = "robot_dreams_advanced", joinColumns = {
+            @JoinColumn(name = "user_id", nullable= false)
+        }, inverseJoinColumns = {
+            @JoinColumn(name = "role_id", nullable = false)
+    })
+
+    private List<Role> roleList = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "computer_id")
+    private Computer computer;
 
 
-    @Autowired
-    public User(String id, String name, Computer computer) {
-        this.id = id;
-        this.name = name;
-        this.computer = computer;
-    }
+
+
+
 
     public void logIn() {
         computer.turnOn();
@@ -30,12 +55,5 @@ public class User {
         System.out.println("The user is logged out");
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", computer=" + computer +
-                '}';
-    }
+
 }
