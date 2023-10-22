@@ -20,11 +20,18 @@ public class ServiceBeanController {
         this.serviceBean = serviceBean;
     }
 
-//    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/hello")
+    public void hello(){
+        System.out.println("Hello");
+    }
+
+    @PreAuthorize("hasRole('USER')")
     @GetMapping("/parameter/{userName}")
     public ResponseEntity<User> getName(@PathVariable("userName") String userName) {
         return ResponseEntity.ok(serviceBean.getByName(userName));
     }
+
+
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/userAdd")

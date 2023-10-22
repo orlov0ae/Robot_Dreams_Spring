@@ -1,0 +1,140 @@
+
+/*Global Styles*/
+
+* {
+    margin: 0;
+    padding: 0;    
+}
+
+body {
+    font-family: 'Nunito';
+    color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.accent {
+    color: #2196F3;
+}
+
+/*Header*/
+
+.header {
+    background-color: #d8d0d0;
+    border-bottom: 1px solid #ECECEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    margin-bottom: 0px;
+}
+
+.header-list li {
+    display: inline;        
+    margin-right: 10px;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    font-size: 35px;
+    color: #2196F3;
+}
+
+
+/*Main Section*/
+
+.main {
+    background-color: rgb(158, 154, 154);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    flex: 1;
+}
+
+.main-text {
+    font-family: 'Overpass';
+    font-size: 100px;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#animatedText {
+    opacity: 0;
+    font-size: 150px;
+    font-weight: 700;
+    color: #e04a0f;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.2;
+    }
+}
+
+
+/*Footer*/
+
+.footer {
+    background-color: #2F303A;
+}
+
+.footer-link {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.71px;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: lowercase;    
+}
+
+.footer-list li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    color: #2196F3;
+}
