@@ -40,8 +40,8 @@ public class Security {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.builder().username("user1").password(passwordEncoder().encode("user123")).roles("USER").build();
-        System.out.println("Hello");
-        return new InMemoryUserDetailsManager(user);
+        UserDetails admin = User.builder().username("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN").build();
+        return new InMemoryUserDetailsManager(user, admin);
     }
 
 }

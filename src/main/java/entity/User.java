@@ -18,6 +18,8 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
+@EqualsAndHashCode
+@ToString
 @Scope("session")
 public class User {
 

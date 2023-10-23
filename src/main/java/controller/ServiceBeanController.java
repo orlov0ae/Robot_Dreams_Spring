@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import service.ServiceBean;
 
 @RestController
-@RequestMapping("api/users")
+@RequestMapping("api/test/users")
 @CrossOrigin("*")
 public class ServiceBeanController {
 

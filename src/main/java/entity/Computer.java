@@ -5,7 +5,6 @@ import lombok.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +17,10 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
+@EqualsAndHashCode
+@ToString
 @Scope("singleton")
-public class Computer implements Serializable {
+public class Computer {
 
     @Id
     @GeneratedValue

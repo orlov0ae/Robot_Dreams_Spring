@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
+
 
 @Data
 @Builder
@@ -21,7 +21,7 @@ import java.io.Serializable;
 @Table(name = "roles", schema = "robot_dreams_advanced")
 @Component
 @Scope("prototype")
-public class Role implements Serializable {
+public class Role {
 
     @Id
     @GeneratedValue
